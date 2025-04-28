@@ -7,15 +7,15 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   
   const socialLinks = [
-    { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: MessageSquare, href: "https://wa.me/1234567890", label: "WhatsApp" }
+    { icon: Instagram, href: "https://www.instagram.com/_priyank_24_md_/", label: "Instagram" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/priyam-dodiya/", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/priyamdodiya", label: "GitHub" },
+    { icon: MessageSquare, href: "https://wa.me/9725332062", label: "WhatsApp" }
   ];
 
   const contactLinks = [
-    { icon: Mail, href: "mailto:contact@example.com", label: "contact@example.com" },
-    { icon: Phone, href: "tel:+1234567890", label: "+123 456 7890" },
+    { icon: Mail, href: "mailto:priyamdodiya9464@gmail.com", label: "priyamdodiya9464@gmail.com" },
+    { icon: Phone, href: "tel:+9725332062", label: "+972 533 2062" },
   ];
   
   return (
@@ -23,9 +23,9 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="font-serif text-lg font-semibold mb-4">Stellar Portfolio</h3>
+            <h3 className="font-serif text-lg font-semibold mb-4">Priyam Portfolio</h3>
             <p className="text-muted-foreground mb-4">
-              Capturing moments, crafting stories, and creating visual experiences that last a lifetime.
+            Passionate Full Stack Developer skilled in building seamless web applications from front-end design to back-end architecture.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((link) => (

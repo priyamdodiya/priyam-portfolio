@@ -38,11 +38,11 @@ export default function Hero() {
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="text-center px-4 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 animate-fade-in">
-            Capturing Moments, Creating Memories
+          Showcasing Creativity & Code
           </h1>
           <p className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
             Welcome to my portfolio where creativity meets technical excellence.
-            Explore my journey through pixels and code.
+            Explore my journey and evolution as a developer.
           </p>
           <div className="space-x-4 animate-fade-in" style={{ animationDelay: "0.4s" }}>
             <Button size="lg" asChild>

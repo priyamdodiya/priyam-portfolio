@@ -1,46 +1,48 @@
+import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 export default function Skills() {
   const skills = [
     {
-      category: "Photography",
-      items: [
-        { name: "Portrait Photography", level: 95 },
-        { name: "Landscape Photography", level: 90 },
-        { name: "Studio Lighting", level: 85 },
-        { name: "Commercial Photography", level: 80 },
-      ],
-    },
-    {
-      category: "Editing",
-      items: [
-        { name: "Adobe Photoshop", level: 90 },
-        { name: "Adobe Lightroom", level: 95 },
-        { name: "Capture One", level: 75 },
-        { name: "DaVinci Resolve", level: 70 },
-      ],
-    },
-    {
       category: "Languages",
       items: [
-        { name: "English", level: 100 },
-        { name: "Spanish", level: 85 },
-        { name: "French", level: 65 },
-        { name: "Portuguese", level: 45 },
+        { name: "English", level: 95 },
+        { name: "Hindi", level: 100 },
+        { name: "Gujarati", level: 100 }
       ],
     },
     {
       category: "Technical",
       items: [
-        { name: "Camera Operation", level: 95 },
-        { name: "Lighting Setup", level: 90 },
-        { name: "Color Theory", level: 85 },
-        { name: "Composition", level: 95 },
+        { name: "Html", level: 100 },
+        { name: "css", level: 100 },
+        { name: "javascript", level: 90 },
+        { name: "react", level: 95 },
+        { name: "redux, redux thunk", level: 95 },
+        { name: "Mongodb", level: 95 },
+        { name: "Node js", level: 85 },
+        { name: "Github", level: 100 },
       ],
     },
   ];
 
+  // Optional: Animate only when in view
+  const sectionRef = useRef(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.2 }
+    );
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="skills" className="section-container">
+    <section id="skills" className="section-container" ref={sectionRef}>
       <h2 className="section-title">My Skills</h2>
       <p className="section-subtitle">
         Specialized expertise and technical knowledge I've developed throughout my career
@@ -58,10 +60,12 @@ export default function Skills() {
                     <span className="text-muted-foreground">{item.level}%</span>
                   </div>
                   <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                    <div
+                    <motion.div
                       className="h-full bg-primary"
-                      style={{ width: `${item.level}%` }}
-                    ></div>
+                      initial={{ width: 0 }}
+                      animate={{ width: inView ? `${item.level}%` : 0 }}
+                      transition={{ duration: 1, ease: "easeOut" }}
+                    />
                   </div>
                 </div>
               ))}
