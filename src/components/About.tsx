@@ -5,8 +5,8 @@ import { Button } from "./ui/button";
 export default function About() {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/PriyamResume.pdf";
-    link.download = "priyamresume.pdf";
+    link.href = "/Resume.pdf";
+    link.download = "Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
