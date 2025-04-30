@@ -1,7 +1,6 @@
 import { FileText } from "lucide-react";
 import Priyank from "../assets/priyank.jpg";
 import { Button } from "./ui/button";
-
 export default function About() {
   const handleDownload = () => {
     const link = document.createElement("a");
